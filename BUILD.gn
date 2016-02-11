@@ -1,0 +1,47 @@
+# Copyright 2016 the Flutter project authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//mojo/public/tools/bindings/mojom.gni")
+
+mojom("interfaces") {
+  sources = [
+    "mojom/firebase.mojom",
+  ]
+}
+
+if (is_ios) {
+  shared_library("platform_lib") {
+    output_name = "Firebase"
+
+    sources = [
+      "src/main.cc",
+      "src/firebase_impl.mm",
+      "src/firebase_impl.h",
+    ]
+
+    libs = [
+      "CFNetwork.framework",
+      "Firebase.framework",
+      "icucore",
+      "Security.framework",
+      "SystemConfiguration.framework",
+    ]
+
+    frameworks_dir = rebase_path("Frameworks")
+    ldflags = [
+      "-F$frameworks_dir",
+    ]
+
+    deps = [
+      "//sky/services/dynamic:dylib",
+      ":interfaces",
+    ]
+  }
+}
+
+group("firebase") {
+  data_deps = [
+    ":platform_lib"
+  ]
+}

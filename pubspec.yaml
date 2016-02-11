@@ -1,0 +1,6 @@
+name: firebase_flutter
+version: 0.0.1
+description: Firebase integration with Flutter
+author: Flutter Team <flutter-dev@googlegroups.com>
+environment:
+  sdk: '>=1.0.0 <2.0.0'

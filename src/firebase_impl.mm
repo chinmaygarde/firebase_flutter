@@ -4,7 +4,7 @@
 
 #include "firebase_impl.h"
 
-#import "Firebase/Firebase.h"
+#import "Firebase.h"
 
 namespace firebase {
 

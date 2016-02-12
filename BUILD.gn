@@ -28,7 +28,11 @@ if (is_ios) {
       "SystemConfiguration.framework",
     ]
 
-    frameworks_dir = rebase_path("Frameworks")
+    include_dirs = [
+      "frameworks/Firebase.framework/Headers"
+    ]
+
+    frameworks_dir = rebase_path("frameworks")
     ldflags = [
       "-F$frameworks_dir",
     ]

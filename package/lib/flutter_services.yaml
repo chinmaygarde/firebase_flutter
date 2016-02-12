@@ -1,2 +1,3 @@
-- name: "firebase::Firebase"
-- ios-framework: "ios/libFirebase.dylib"
+services:
+  - name: "firebase::Firebase"
+    ios-framework: "ios/libFirebase.dylib"

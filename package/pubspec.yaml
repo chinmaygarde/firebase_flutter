@@ -3,6 +3,5 @@ version: 0.0.1
 description: Firebase integration with Flutter
 author: Flutter Team <flutter-dev@googlegroups.com>
 homepage: http://flutter.io/
-publish_to: none
 environment:
   sdk: '>=1.0.0 <2.0.0'
